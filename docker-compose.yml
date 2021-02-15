@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  currency_api:
+    container_name: currency_api
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - ${API_PORT}:3000
+    networks:
+      - webnet
+networks:
+  webnet:

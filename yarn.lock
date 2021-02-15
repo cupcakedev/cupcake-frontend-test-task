@@ -673,6 +673,32 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@thi.ng/api@^6.13.6":
+  version "6.13.6"
+  resolved "https://registry.yarnpkg.com/@thi.ng/api/-/api-6.13.6.tgz#fb24ffd0fad409b2cc2c6156850b0d9829e0196d"
+  integrity sha512-r1qJR2QaODkhG0poOKAkFIaHYeGF3rYuh/eaGx+4mBjA+jUCRlqQNr/yP1DsjMEVbjlE1jqS5apQvnfSmQlOvg==
+
+"@thi.ng/checks@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@thi.ng/checks/-/checks-2.8.0.tgz#b5ff557236adbe76f90392c7298a29fd440f9fcb"
+  integrity sha512-sAfnR+Az6y7LlK7nAWb0WRo6JTqPI9MhImZHYcQrFYwMT+IYIVhv7Vv96OrybKs2C2wxukCYAlgrhcaOfXe+QA==
+  dependencies:
+    tslib "2.0.1"
+
+"@thi.ng/hex@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@thi.ng/hex/-/hex-0.1.3.tgz#dd9c1211e56b1c10682d29292e1433e053c55947"
+  integrity sha512-TPexHY7kHeDwZDooW8pv/uVBbqE841hstLrtZdtJk7FRbG5zpceTLbbxAtbX3pEbfEaTSn/lArt2aMjAmatsBw==
+
+"@thi.ng/random@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@thi.ng/random/-/random-2.2.0.tgz#0e5436f77262424e1a40a92ff844db36bca23cad"
+  integrity sha512-Apw6gDVQ8lhXVQccfsufvZqVNfE2jjlKFCho87W0V6pW3LaZbYGHclTZThnrXvOdtlXuB/VB1+QnorVGPKtPIQ==
+  dependencies:
+    "@thi.ng/api" "^6.13.6"
+    "@thi.ng/checks" "^2.8.0"
+    "@thi.ng/hex" "^0.1.3"
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
@@ -5571,6 +5597,11 @@ tsconfig-paths@3.9.0, tsconfig-paths@^3.4.0, tsconfig-paths@^3.9.0:
     json5 "^1.0.1"
     minimist "^1.2.0"
     strip-bom "^3.0.0"
+
+tslib@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
+  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
 tslib@2.1.0:
   version "2.1.0"
