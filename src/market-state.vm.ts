@@ -1,9 +1,8 @@
+import { MarketStateRatesVm } from './market-state-rates.vm';
+
 export class MarketStateVm {
-  CUP: number;
-  CAKE: number;
-  CUPCAKE: number;
-  RUB: number;
-  USD: number;
-  EUR: number;
+  date: string;
+  base: string;
+  rates: MarketStateRatesVm;
   timestamp: number;
 }

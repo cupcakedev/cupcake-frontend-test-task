@@ -3,6 +3,10 @@ import { MarketStateVm } from './market-state.vm';
 import { Smush32, gaussian, exponential } from '@thi.ng/random';
 import { BehaviorSubject, interval, Observable } from 'rxjs';
 import { delay, first } from 'rxjs/operators';
+import { MarketStateRatesVm } from './market-state-rates.vm';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const dateFormat = require('dateformat');
 
 @Injectable()
 export class MarketStateSecondService {
@@ -23,20 +27,27 @@ export class MarketStateSecondService {
     const marketState = new MarketStateVm();
     const marketNoise = gaussian(this.rnd, 0.5, 0)();
     const currencyNoiseGen = gaussian(this.rnd, 0.5, 0);
-    marketState.CUPCAKE = 1;
-    marketState.RUB = lastState.RUB + marketNoise + currencyNoiseGen();
-    marketState.USD = lastState.USD + marketNoise + currencyNoiseGen();
-    marketState.EUR = lastState.EUR + marketNoise + currencyNoiseGen();
+    marketState.rates = new MarketStateRatesVm();
+    marketState.rates.RUB =
+      lastState.rates.RUB + marketNoise + currencyNoiseGen();
+    marketState.rates.USD =
+      lastState.rates.USD + marketNoise + currencyNoiseGen();
+    marketState.rates.EUR =
+      lastState.rates.EUR + marketNoise + currencyNoiseGen();
     marketState.timestamp = Math.round(new Date().getTime() / 1000);
+    marketState.base = 'CUPCAKE';
+    marketState.date = dateFormat(new Date(), 'yyyy-mm-dd');
     return marketState;
   }
   private initialState(): MarketStateVm {
     const marketState = new MarketStateVm();
-    marketState.CUPCAKE = 1;
-    marketState.EUR = 150 + gaussian(this.rnd, 1, 0)();
-    marketState.RUB = 50 + gaussian(this.rnd, 1, 0)();
-    marketState.USD = 100 + gaussian(this.rnd, 1, 0)();
+    marketState.rates = new MarketStateRatesVm();
+    marketState.rates.EUR = gaussian(this.rnd, 1, 4)();
+    marketState.rates.RUB = gaussian(this.rnd, 1, 4)();
+    marketState.rates.USD = gaussian(this.rnd, 1, 2)();
     marketState.timestamp = Math.round(new Date().getTime() / 1000);
+    marketState.base = 'CUPCAKE';
+    marketState.date = dateFormat(new Date(), 'yyyy-mm-dd');
     return marketState;
   }
 }
