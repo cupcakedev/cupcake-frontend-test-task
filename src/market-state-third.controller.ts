@@ -7,12 +7,12 @@ import { MarketStateThirdService } from './market-state-third.service';
 @Controller('third')
 export class MarketStateThirdController {
   constructor(private marketStateThirdService: MarketStateThirdService) {}
-  @ApiResponse({ type: MarketStateOutputDto, status: 200 })
+  @ApiResponse({ type: MarketStateOutputDto, status: 200, description: "Get current market state" })
   @Get()
   getThird(): any {
     return this.marketStateThirdService.getState();
   }
-  @ApiResponse({ type: MarketStateOutputDto, status: 200 })
+  @ApiResponse({ type: MarketStateOutputDto, status: 200, description: "Resolve, when new market state is available" })
   @Get('poll')
   getThirdPoll() {
     return this.marketStateThirdService.getNextState();
